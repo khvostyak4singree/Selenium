@@ -22,7 +22,7 @@ public class OpenSite {
             }
 
     @Test
-  public static void tests(int i) throws InterruptedException {
+  public static void tests() throws InterruptedException {
         Thread.sleep(1000);
         WebElement min = driver.findElement(By.id("true-random-integer-generator-min"));
         min.clear();
