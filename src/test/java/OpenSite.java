@@ -4,20 +4,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
 
 public class OpenSite {
 
    public static WebDriver driver;
-    public static WebDriverWait wait;
-        @BeforeMethod
+  //  public static WebDriverWait wait;
+        @BeforeTest
                 public static void setup(){
                 driver = new ChromeDriver();
                 driver.manage().window().maximize();
                 driver.get("https://www.random.org");
-                wait = new WebDriverWait(driver,10);
+                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
             }
 
@@ -39,8 +41,8 @@ public class OpenSite {
         Assert.assertTrue(result > 0 && result < 100);
     }
 
-        @AfterMethod
+        @AfterTest
     public static void teardown(){
-                    driver.close();
+                    driver.quit();
         }
     }

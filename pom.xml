@@ -8,15 +8,18 @@
     <artifactId>Selenium</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-<dependencies> <dependency>
+<dependencies>
+
+    <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>LATEST</version>
-</dependency>
+    </dependency>
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
         <version>LATEST</version>
+
     </dependency>
 </dependencies>
 
